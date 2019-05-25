@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Memory Card Game</title>
+        <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet"> 
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="stylesheet" href="bootstrap.min.css">
+        <link rel="stylesheet" href="game_style.css">
+    </head>
+    <body> 
+        <!-- choosing diffculty-->
+        <div id="difficulty" class="container text-center">
+            <h1>Memory Card Game</h1>
+            <h3>Let's play.... Are you ready?!</h3>
+            <br>
+            <button type="button" data-mode="easyMode" onclick="choseMode(this)">
+                    <i class="fas fa-dice-one"></i> easy
+            </button>
+            <br> 
+            <button type="button" data-mode="mediumMode" onclick="choseMode(this)">
+                    <i class="fas fa-dice-two"></i> medium
+            </button> 
+            <br>
+            <button type="button" data-mode="hardMode" onclick="choseMode(this)">
+                    <i class="fas fa-dice-three"></i> hard
+            </button> 
+        </div>
+                 <!-- evaluation part -->
+        <div id="topPart" class="container mt-5 " >
+             <div class="row">
+                <p class="col-4 font-weight-bold text-right">
+                     <i class="fas fa-redo-alt mr-2" id="restartGame" onclick="restart(this)"></i>
+                     moves : <span class="font-weight-bold" id="moves"></span>     
+                </p>
+                <ul class="col-4 stars list-inline text-center" id="rating">
+                     <li class="list-inline-item text-warning"><i class="fas fa-star"></i></li>
+                     <li class="list-inline-item text-warning"><i class="fas fa-star"></i></li>
+                     <li class="list-inline-item text-warning"><i class="fas fa-star"></i></li>
+                </ul>
+                <p class="col-4 px-0 text-left">
+                      <span class="mx-2 h5 font-weight-bold" id="counter_show"></span>
+                      
+                      <!--
+                      <i class="fas fa-pause" id="pauseBtn" onclick="pause_game(this.id)"></i>
+                      <i class="fas fa-play" id="playBtn" onclick="play_game(this.id)"></i>
+                      -->
+                </p>
+            </div>
+        </div>
+                <!-- easy mode cards desk-->
+        <div  id="easyMode" class="container">
+                   <!-- first row -->
+            <div class="row card-deck rowStyle">
+                <div class="col-3 card text-center cardStyle mx-2"><i class="fas fa-leaf"></i></div>
+                <div class="col-3 card text-center cardStyle mx-2"><i class="fas fa-leaf"></i></div>
+                <div class="col-3 card text-center cardStyle mx-2"><i class="fab fa-pagelines"></i></div>
+                <div class="col-3 card text-center cardStyle mx-2"><i class="fab fa-pagelines"></i></div>
+            </div>
+                     <!-- second row -->
+            <div class="row card-deck rowStyle">
+                    <div class="col-3 card text-center cardStyle mx-2"><i class="fas fa-coffee"></i></div>
+                    <div class="col-3 card text-center cardStyle mx-2"><i class="fas fa-coffee"></i></div>
+                    <div class="col-3 card text-center cardStyle mx-2"><i class="fas fa-crown"></i></div>
+                    <div class="col-3 card text-center cardStyle mx-2"><i class="fas fa-crown"></i></div>
+            </div>
+                 <!-- third row -->
+            <div class="row card-deck rowStyle">
+                    <div class="col-3 card text-center cardStyle mx-2"><i class="fas fa-dove"></i></div>
+                    <div class="col-3 card text-center cardStyle mx-2"><i class="fas fa-dove"></i></div>
+                    <div class="col-3 card text-center cardStyle mx-2"><i class="fas fa-football-ball"></i></div>
+                    <div class="col-3 card text-center cardStyle mx-2"><i class="fas fa-football-ball"></i></div>
+            </div>
+
+        </div>
+       
+                <!-- medium mode cards desk-->
+         
+        <div  id="mediumMode" class="container">
+                   <!-- first row -->
+            <div class="row card-deck rowStyle">
+                <div class="col-3 card text-center cardStyle mx-2"><i class="fas fa-leaf"></i></div>
+                <div class="col-3 card text-center cardStyle mx-2"><i class="fas fa-leaf"></i></div>
+                <div class="col-3 card text-center cardStyle mx-2"><i class="fab fa-pagelines"></i></div>
+                <div class="col-3 card text-center cardStyle mx-2"><i class="fab fa-pagelines"></i></div>
+            </div>
+                     <!-- second row -->
+            <div class="row card-deck rowStyle">
+                <div class="col-3 card text-center cardStyle mx-2"><i class="fas fa-coffee"></i></div>
+                <div class="col-3 card text-center cardStyle mx-2"><i class="fas fa-coffee"></i></div>
+                <div class="col-3 card text-center cardStyle mx-2"><i class="fas fa-crown"></i></div>
+                <div class="col-3 card text-center cardStyle mx-2"><i class="fas fa-crown"></i></div>
+            </div>
+                 <!-- third row -->
+            <div class="row card-deck rowStyle">
+                <div class="col-3 card text-center cardStyle mx-2"><i class="fas fa-dove"></i></div>
+                <div class="col-3 card text-center cardStyle mx-2"><i class="fas fa-dove"></i></div>
+                <div class="col-3 card text-center cardStyle mx-2"><i class="fas fa-football-ball"></i></div>
+                <div class="col-3 card text-center cardStyle mx-2"><i class="fas fa-football-ball"></i></div>
+            </div>
+                 <!-- fourth row -->
+            <div class="row card-deck rowStyle">
+                <div class="col-3 card text-center cardStyle mx-2"><i class="fas fa-bicycle"></i></div>
+                <div class="col-3 card text-center cardStyle mx-2"><i class="fas fa-bicycle"></i></div>
+                <div class="col-3 card text-center cardStyle mx-2"><i class="fas fa-bus-alt"></i></div>
+                <div class="col-3 card text-center cardStyle mx-2"><i class="fas fa-bus-alt"></i></div>
+            </div>
+                     <!-- fifth row -->
+            <div class="row card-deck rowStyle">
+                <div class="col-3 card text-center cardStyle mx-2"><i class="fab fa-canadian-maple-leaf"></i></div>
+                <div class="col-3 card text-center cardStyle mx-2"><i class="fab fa-canadian-maple-leaf"></i></div>
+                <div class="col-3 card text-center cardStyle mx-2"><i class="fas fa-basketball-ball"></i></div>
+                <div class="col-3 card text-center cardStyle mx-2"><i class="fas fa-basketball-ball"></i></div>
+             </div>
+
+        </div>
+        
+                <!-- hard mode cards desk-->
+        
+        <div  id="hardMode" class="container-fluid">
+                        <!-- first row -->
+           <div class="row card-deck rowStyle">
+                <div class="col-auto card text-center cardStyle mx-2"><i class="fas fa-leaf"></i></div>
+                <div class="col-auto card text-center cardStyle mx-2"><i class="fas fa-leaf"></i></div>
+                <div class="col-auto card text-center cardStyle mx-2"><i class="fab fa-pagelines"></i></div>
+                <div class="col-auto card text-center cardStyle mx-2"><i class="fab fa-pagelines"></i></div>
+                <div class="col-auto card text-center cardStyle mx-2"><i class="fas fa-atom"></i></div>
+                <div class="col-auto card text-center cardStyle mx-2"><i class="fas fa-atom"></i></div>
+                <div class="col-auto card text-center cardStyle mx-2"><i class="fas fa-pizza-slice"></i></div>
+           </div>
+                        <!-- second row -->
+           <div class="row card-deck rowStyle">
+                <div class="col card text-center cardStyle mx-2"><i class="fas fa-coffee"></i></div>
+                <div class="col card text-center cardStyle mx-2"><i class="fas fa-coffee"></i></div>
+                <div class="col card text-center cardStyle mx-2"><i class="fas fa-crown"></i></div>
+                <div class="col card text-center cardStyle mx-2"><i class="fas fa-crown"></i></div>
+                <div class="col card text-center cardStyle mx-2"><i class="fas fa-chess"></i></div>
+                <div class="col card text-center cardStyle mx-2"><i class="fas fa-chess"></i></div>
+                <div class="col card text-center cardStyle mx-2"><i class="fas fa-pizza-slice"></i></div>
+           </div>
+                        <!-- third row -->
+           <div class="row card-deck rowStyle">
+                <div class="col card text-center cardStyle mx-2"><i class="fas fa-dove"></i></div>
+                <div class="col card text-center cardStyle mx-2"><i class="fas fa-dove"></i></div>
+                <div class="col card text-center cardStyle mx-2"><i class="fas fa-football-ball"></i></div>
+                <div class="col card text-center cardStyle mx-2"><i class="fas fa-football-ball"></i></div>
+                <div class="col card text-center cardStyle mx-2"><i class="fas fa-chess-knight"></i></div>
+                <div class="col card text-center cardStyle mx-2"><i class="fas fa-chess-knight"></i></div>
+                <div class="col card text-center cardStyle mx-2"><i class="fas fa-laptop"></i></div>
+           </div>
+                        <!-- fourth row -->
+           <div class="row card-deck rowStyle">
+                <div class="col card text-center cardStyle mx-2"><i class="fas fa-bicycle"></i></div>
+                <div class="col card text-center cardStyle mx-2"><i class="fas fa-bicycle"></i></div>
+                <div class="col card text-center cardStyle mx-2"><i class="fas fa-bus-alt"></i></div>
+                <div class="col card text-center cardStyle mx-2"><i class="fas fa-bus-alt"></i></div>
+                <div class="col card text-center cardStyle mx-2"><i class="fas fa-chess-rook"></i></div>
+                <div class="col card text-center cardStyle mx-2"><i class="fas fa-chess-rook"></i></div>
+                <div class="col card text-center cardStyle mx-2"><i class="fas fa-laptop"></i></div>
+           </div>
+                        <!-- fifth row -->
+           <div class="row card-deck rowStyle">
+                <div class="col card text-center cardStyle mx-2"><i class="fab fa-canadian-maple-leaf"></i></div>
+                <div class="col card text-center cardStyle mx-2"><i class="fab fa-canadian-maple-leaf"></i></div>
+                <div class="col card text-center cardStyle mx-2"><i class="fas fa-basketball-ball"></i></div>
+                <div class="col card text-center cardStyle mx-2"><i class="fas fa-basketball-ball"></i></div>
+                <div class="col card text-center cardStyle mx-2"><i class="fas fa-apple-alt"></i></div>
+                <div class="col card text-center cardStyle mx-2"><i class="fas fa-apple-alt"></i></div>
+                <div class="col card text-center cardStyle mx-2"><i class="fas fa-ice-cream"></i></div>
+           </div>
+                  <!-- sixth row -->
+           <div class="row card-deck rowStyle">
+                <div class="col card text-center cardStyle mx-2"><i class="fas fa-car"></i></div>
+                <div class="col card text-center cardStyle mx-2"><i class="fas fa-car"></i></div>
+                <div class="col card text-center cardStyle mx-2"><i class="fas fa-feather-alt"></i></div>
+                <div class="col card text-center cardStyle mx-2"><i class="fas fa-feather-alt"></i></div>
+                <div class="col card text-center cardStyle mx-2"><i class="far fa-clock"></i></div>
+                <div class="col card text-center cardStyle mx-2"><i class="far fa-clock"></i></div>
+                <div class="col card text-center cardStyle mx-2"><i class="fas fa-ice-cream"></i></div>
+           </div>
+
+        </div>
+
+        <div class="container text-center h3" id="notifications">
+             <p class="message"></p>
+             <span class="hideNotify" onclick="disappear()">x</span>
+             <button type="button" onclick="on_load()">Main menu</button>
+        </div>
+
+     <script src="game_script.js"></script>
+    </body>
+</html>

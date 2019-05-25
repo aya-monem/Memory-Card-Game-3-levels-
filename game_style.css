@@ -1,0 +1,129 @@
+body{
+    font-family: 'Indie Flower', cursive;
+    align-items: center;
+}
+html {
+	box-sizing: border-box;
+}
+#difficulty{
+    margin: 100px auto 50px auto;
+}
+#difficulty button , #notifications button{
+    color :  rgb(27, 73, 73); /*purple;*/
+    background-color: white;
+    padding: 5px 10px;
+    margin: 5px 0px;
+    font-size: 25px;
+    border-radius: 10px;
+}
+#topPart{
+    width : 55%;
+    display : none;
+}
+#topPart p , #topPart ul{
+    align-items: center;
+}
+#easyMode, #mediumMode, #hardMode{
+     background-color:rgb(27, 73, 73) ;/* rgb(35,92,92);rgb(117, 87, 117);  */
+     padding: 20px 25px 10px 25px;
+     margin-bottom : 50px;
+     position : relative;
+     display : none;
+}
+#easyMode{
+    width : 40%;
+}
+#mediumMode{
+    width : 45%;
+}
+#hardMode{
+    width : 75%;
+}
+#notifications{
+    width : 40%;
+    height: 200px;
+    background-color: rgb(173, 216, 230);
+    position : absolute;
+    top : 100px;
+    left : 30%;
+    padding-top:50px ;
+    display : none;
+}
+.rowStyle{
+    margin-bottom: 15px;
+}
+.card i {  
+    box-sizing: border-box; 
+    padding : 20px 0px ;
+}
+.cardStyle{
+    width : 200px;
+    background-color: black;
+    color: black; 
+    border-radius: 10px;
+    cursor: pointer;
+    align-items: center;
+    font-size: 27px;
+}
+.open {
+    background-color: skyblue;
+     animation:rotate 0.8s;
+}
+
+@keyframes rotate{
+    from {
+        transform:rotateY(90deg);
+    }
+}
+.match {
+    background-color: whitesmoke;
+    animation:size 0.6s ease ; 
+    
+}
+@keyframes size{
+    0% {transform : scale(1, 1);}
+    25% {transform : scale(0.8, 1.2);}
+    50% {transform : scale(1, 1);}
+    75% {transform : scale(0.8, 1.2);}
+    100% {transform : scale(1, 1);}
+}
+.unmatch{
+    background-color:red;
+    animation:size 0.6s ease ; 
+}
+/*
+@keyframes font {
+    0% {font-size : 27px;} 
+    25%  {font-size : 37px;} 
+    50%  {font-size : 47px;} 
+    75%  {font-size : 37px;} 
+    100%  {font-size : 27px;} 
+}
+*/
+.disabled{
+    background-color: rgb(27, 73, 73);
+    color : rgb(27, 73, 73);
+    border : 0px;
+    cursor: auto;
+}
+#counter_show{
+    position : relative;
+}
+#pauseBtn , #playBtn{
+    position : absolute;
+    top : 5px;
+    right : 55px;
+    cursor: pointer;
+}
+#playBtn{
+   display: none; 
+}
+.fa-redo-alt{
+    cursor: pointer;
+}
+.hideNotify{
+    position: absolute;
+    cursor: pointer;
+    top : 20px;
+    right:20px;
+}
